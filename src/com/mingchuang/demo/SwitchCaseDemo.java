@@ -1,5 +1,7 @@
 package com.mingchuang.demo;
 
+import java.util.Scanner;
+
 /**
  * @Author：林桥
  * @Destription：
@@ -30,7 +32,64 @@ package com.mingchuang.demo;
  **/
 public class SwitchCaseDemo {
     public static void main(String[] args) {
-        function_1();
+      //看程序写结果
+        /**
+         * 键盘录入月份，输出相对应的季节
+         * 3，4,5，是春季
+         * 6,7,8，是夏季
+         * 9,10,11，是秋季
+         * 12,1,2 是冬季
+         * 合理运用case击穿
+         */
+        Scanner month=new Scanner(System.in);
+        System.out.println("请输入一个月份");
+        int a=month.nextInt();
+        if(a>12){
+            System.out.println("====================");
+            System.out.println("输入错误，请重新输入");
+             a=month.nextInt();
+        }
+        switch(a){
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("您输入的月份是春季");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("您输入的月份是夏季");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("您输入的月份是秋季");
+                break;
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("您输入的月份是冬季");
+                break;
+
+
+
+        }
+
+    }
+
+    public static int functtion_2() {
+        int x=2;
+        int y=3;
+        switch (x){
+            default:
+                y++;
+            case 3:
+                y++;
+                break;
+            case 4:
+                y++;
+        }
+        return y;
     }
 
     public static void function_1() {
